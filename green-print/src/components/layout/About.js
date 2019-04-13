@@ -25,6 +25,25 @@ export default function About() {
         may include: Any end-of-life process or treatments Product and waste
         transportation Emissions associated with selling the product
       </div>
+      <div>
+        <div>Method for vehicles</div>
+        <div>
+          Use of Vehicles When it comes to the vehicles you drive, your carbon
+          footprint depends on the miles per gallon or the mileage offered by
+          your vehicle, and on the total number of miles that you drive per
+          year. Now, if you are wondering how driving a vehicle can contribute
+          towards your carbon footprint, it is due to the burning of fossil
+          fuels such as petrol or diesel. You can calculate the gas emissions
+          from vehicles in the following two ways. Collect all your gas receipts
+          for the entire year and add them up. This will give you the gas
+          consumed throughout the year, in gallons. Now, multiply this value
+          with the standard rate of CO2 emissions for the fuel. It is 19.56 lbs
+          for unleaded petrol and 22.48 lbs for diesel. Another way to calculate
+          is to divide the number of miles traveled in the given year by the
+          vehicle's mileage. This way you'll again obtain the number of gallons
+          used. Multiply this with the standard CO2 emission rate for your fuel.
+        </div>
+      </div>
     </div>
   );
 }

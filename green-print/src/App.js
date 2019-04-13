@@ -10,6 +10,7 @@ import Headbar from "./components/layout/Headbar";
 import Dasboard from "./components/layout/Dashboard";
 
 import MetroHome from "./components/metro/MetroHome";
+import About from "./components/layout/About";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <Headbar />
         <Switch>
           <Route exact path="/" component={Dasboard} />
+          <Route path="/about" component={About} />
         </Switch>
       </Router>
     );

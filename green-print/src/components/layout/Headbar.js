@@ -34,7 +34,7 @@ const Headbar = () => {
         Green-Print
       </Link>
       <div>
-        <Link to="/">About</Link>
+        <Link to="/about">About</Link>
         <Link to="/">Log Out</Link>
         <Link to="/">Log In</Link>
       </div>
