@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   margin-bottom: 15px;
   height: 53px;
@@ -17,18 +18,22 @@ const StyledDiv = styled.div`
   }
   .logo {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 5px;
   }
   .links {
     color: white;
-    font-size: 1rem;
+    font-size: 1.04rem;
     font-weight: bold;
+    margin-left: 2.5%;
   }
-  div {
+  .link-container {
     display: flex;
-    width: 20%;
+    flex-direction: row-reverse;
+    width: 30%;
+    flex-grow: 1;
+    margin-right: 0;
   }
 `;
 
@@ -38,18 +43,19 @@ const Headbar = () => {
       <Link to="/" className="logo">
         Green-Print
       </Link>
-      <div>
-        <Link to="/about" className="links">
-          About
-        </Link>
-        <Link to="/appHome" className="links">
-          Calculate
+
+      <div className="link-container">
+        <Link to="/" className="links">
+          Log In
         </Link>
         <Link to="/" className="links">
           Log Out
         </Link>
-        <Link to="/" className="links">
-          Log In
+        <Link to="/appHome" className="links">
+          Calculate
+        </Link>
+        <Link to="/about" className="links">
+          About
         </Link>
       </div>
     </StyledDiv>
