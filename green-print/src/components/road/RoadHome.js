@@ -27,7 +27,9 @@ const StyledContainer = styled.div`
 class RoadHome extends React.Component {
   state = {
     start: "",
-    end: ""
+    end: "",
+    distance: "",
+    time: ""
   };
   mapboxgl = window.mapboxgl;
   MapboxDirections = window.MapboxDirections;
@@ -36,7 +38,8 @@ class RoadHome extends React.Component {
     this.setState({
       [e.target.id]: e.target.value
     });
-    console.log(this.state);
+
+    // console.log(this.state);
   };
 
   componentDidMount() {
@@ -56,8 +59,8 @@ class RoadHome extends React.Component {
       "top-left"
     );
     map.addControl(new this.mapboxgl.NavigationControl());
-    // apppp
 
+    // INPUT REFRENCES
     const startInput = document.querySelector(".mapboxgl-ctrl-geocoder")
       .childNodes[1];
     startInput.id = "start";
@@ -74,6 +77,17 @@ class RoadHome extends React.Component {
   }
 
   render() {
+    var checkExist = setInterval(function() {
+      if (document.querySelector(".mapbox-directions-route-summary") != null) {
+        const distance = document.querySelector(
+          ".mapbox-directions-route-summary"
+        ).childNodes[1];
+        const time = document.querySelector(".mapbox-directions-route-summary")
+          .childNodes[3];
+        console.log(distance, time);
+        clearInterval(checkExist);
+      }
+    }, 200);
     if (this.state.start && this.state.end) {
       return (
         <StyledContainer>
