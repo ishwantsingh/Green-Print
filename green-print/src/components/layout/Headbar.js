@@ -21,6 +21,10 @@ const StyledDiv = styled.div`
     font-weight: bold;
     margin-bottom: 5px;
   }
+  div {
+    display: flex;
+    width: 15%;
+  }
 `;
 
 const Headbar = () => {
@@ -29,6 +33,11 @@ const Headbar = () => {
       <Link to="/" className="logo">
         Green-Print
       </Link>
+      <div>
+        <Link to="/">About</Link>
+        <Link to="/">Log Out</Link>
+        <Link to="/">Log In</Link>
+      </div>
     </StyledDiv>
   );
 };
