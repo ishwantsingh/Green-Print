@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledContainer = styled.body`
+const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -16,7 +16,7 @@ const StyledContainer = styled.body`
 `;
 
 class RoadHome extends React.Component {
-  //   mapboxgl = window.mapboxgl;
+  // mapboxgl = window.mapboxgl;
 
   render() {
     // this.mapboxgl.accessToken =
@@ -28,11 +28,18 @@ class RoadHome extends React.Component {
     //   center: [77.041, 28.5917], // starting position
     //   zoom: 16 // starting zoom
     // });
+    // map.addControl(
+    //   new MapboxDirections({
+    //     accessToken: this.mapboxgl.accessToken
+    //   }),
+    //   "top-left"
+    // );
     // map.addControl(new this.mapboxgl.NavigationControl());
     return (
       <StyledContainer>
         <div className="container">
-          <div className="heading">Whatevs</div>
+          <input placeholder="Enter Start Point" />
+          <input placeholder="Enter End Point" />
           {/* <div id="" map /> */}
         </div>
       </StyledContainer>

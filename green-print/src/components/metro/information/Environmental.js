@@ -87,7 +87,7 @@ const Environmental = props => {
   } else {
     return (
       <Styledcontainer>
-        <div className="no-data-div">Please Select Stations</div>
+        <div className="no-data-div" />
       </Styledcontainer>
     );
   }

@@ -6,7 +6,8 @@ const initialState = {
   end: "",
   startIndex: 0,
   endIndex: 0,
-  distance: 0
+  distance: 0,
+  inputed: false
 };
 
 export default function stationReducer(state = initialState, action) {
@@ -28,8 +29,11 @@ export default function stationReducer(state = initialState, action) {
         end: action.payload.end,
         distance: distance,
         startIndex: startIndex,
-        endIndex: endIndex
+        endIndex: endIndex,
+        inputed: true
       };
+    case "RECIEVED_INFO":
+      return { ...state, inputed: false };
     default:
       return state;
   }

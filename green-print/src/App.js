@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/" component={Dasboard} />
           <Route path="/about" component={About} />
           <Route path="/apphome" component={AppHome} />
-          {/* <Route path="/road" component={RoadHome} /> */}
+          <Route path="/road" component={RoadHome} />
           <Route path="/metro" component={MetroHome} />
           <Switch>
             <Route path="/financial" component={Financial} />

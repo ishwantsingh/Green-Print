@@ -113,7 +113,7 @@ class Dashboard extends React.Component {
             <div className="heading">
               Ways to reduce personal carbon footprint
             </div>
-            <div className="sub-heading">General Way</div>
+            {/* <div className="sub-heading">General Way</div>
             <div>
               The most common way to reduce the carbon footprint of humans is to
               Reduce, Reuse, Recycle, Refuse. This can also be done by using
@@ -133,7 +133,7 @@ class Dashboard extends React.Component {
               insulation to the walls and attic of one's home, and installing
               weather stripping or caulking around doors and windows one can
               lower their heating costs more than 25 percent.
-            </div>
+            </div> */}
             <div className="sub-heading">Alternatives to driving</div>
             <div>
               When possible, walk or ride your bike in order to avoid carbon

@@ -115,7 +115,13 @@ class MetroHome extends React.Component {
               <button className="waves-effect btn">Show Info</button>
             </div>
           </Form>
-          <Switchbar />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Financial />
+          <Environmental />
         </div>
       </StyledContainer>
     );
