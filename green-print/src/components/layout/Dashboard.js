@@ -10,6 +10,15 @@ const StyledContainer = styled.div`
     .heading {
       font-size: 1.7rem;
     }
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+    .transport-method {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 20px auto;
+      text-align: center;
+    }
   }
 `;
 
@@ -70,6 +79,7 @@ class Dashboard extends React.Component {
             <div className="heading">
               Ways to reduce personal carbon footprint
             </div>
+            <div className="sub-heading">General Way</div>
             <div>
               The most common way to reduce the carbon footprint of humans is to
               Reduce, Reuse, Recycle, Refuse. This can also be done by using
@@ -90,8 +100,39 @@ class Dashboard extends React.Component {
               weather stripping or caulking around doors and windows one can
               lower their heating costs more than 25 percent.
             </div>
+            <div className="sub-heading">Alternatives to driving</div>
+            <div>
+              When possible, walk or ride your bike in order to avoid carbon
+              emissions completely. Carpooling and public transportation
+              drastically reduce CO2 emissions by spreading them out over many
+              riders. Drive a low carbon vehicle High mileage doesn’t always
+              mean low CO2 emissions. All vehicles have an estimated
+              miles-per-gallon rating. Electric cars emit no CO2 if they’re
+              charged with clean electricity. If you don’t charge it with your
+              home’s solar panels AND live somewhere like WY, MO, MO, WV, or KY
+              you’re BETTER OFF with a hybrid or high-mileage gas/diesel car.
+              Here’s why. After incentives and gas savings, it essentially costs
+              nothing to switch to an electric car like the the Nissan Leaf. Get
+              a hitch-mounted cargo rack Don’t buy a minivan or SUV if you don’t
+              need 4WD and/or will only occasionally need the extra space. A
+              receiver hitch and a rack like this one only cost a few hundred
+              bucks. Avoid roof-top boxes, which cost much more, increase
+              aerodynamic drag, and decrease fuel economy. Driving style
+              Speeding and unnecessary acceleration reduce mileage by up to 33%,
+              waste gas and money, and increase your carbon footprint. Tire
+              inflation and other tuning Properly inflated tires improve your
+              gas mileage by up to 3%. It also helps to use the correct grade of
+              motor oil, and to keep your engine tuned, because some maintenance
+              fixes, like fixing faulty oxygen sensors, can increase fuel
+              efficiency by up to 40%. Avoid traffic Being stuck in traffic
+              wastes gas and unneccessarily creates CO2. Use traffic websites
+              and apps and go a different way or wait. Misc. Combine errands to
+              make fewer trips. Remove excess weight from your car. Use cruise
+              control.
+            </div>
           </div>
-          <p>You are travelling via: </p>
+
+          <div className="transport-method">You are travelling via: </div>
         </div>
       </StyledContainer>
     );
