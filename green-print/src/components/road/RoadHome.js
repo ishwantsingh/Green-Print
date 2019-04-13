@@ -25,11 +25,13 @@ class RoadHome extends React.Component {
   mapboxgl = window.mapboxgl;
   MapboxDirections = window.MapboxDirections;
 
-  changeHandler(e) {
-    e.target.name = e.target.value;
-    // console.log(e.target.value);
-    console.log(e.target.name);
-  }
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+    console.log(this.state);
+  };
+
   componentDidMount() {
     this.mapboxgl.accessToken =
       "pk.eyJ1IjoiaXNod2FudHNpbmdoIiwiYSI6ImNqdWUzZ2NjbjBndjA0ZW9od2t1aGpvNDIifQ.w1yxRYhbHY2Xw9aQ11R7zA";
@@ -51,14 +53,16 @@ class RoadHome extends React.Component {
 
     const startInput = document.querySelector(".mapboxgl-ctrl-geocoder")
       .childNodes[1];
+    startInput.id = "start";
     startInput.addEventListener("change", e => {
-      this.changeHandler(e);
+      this.handleChange(e);
     });
 
     const endInput = document.querySelectorAll(".mapboxgl-ctrl-geocoder")[1]
       .childNodes[1];
+    endInput.id = "end";
     endInput.addEventListener("change", e => {
-      this.changeHandler(e);
+      this.handleChange(e);
     });
   }
 
