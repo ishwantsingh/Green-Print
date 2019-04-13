@@ -7,18 +7,18 @@ import styled from "styled-components";
 import "./App.css";
 
 import Headbar from "./components/layout/Headbar";
+import Dasboard from "./components/layout/Dashboard";
+
 import MetroHome from "./components/metro/MetroHome";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Headbar />
-          <Switch>
-            <Route exact path="/" component={MetroHome} />
-          </Switch>
-        </div>
+        <Headbar />
+        <Switch>
+          <Route exact path="/" component={Dasboard} />
+        </Switch>
       </Router>
     );
   }
