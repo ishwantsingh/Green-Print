@@ -7,7 +7,7 @@ import styled from "styled-components";
 import "./App.css";
 
 import Headbar from "./components/layout/Headbar";
-import Home from "./components/Home";
+import MetroHome from "./components/metro/MetroHome";
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
         <div>
           <Headbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={MetroHome} />
           </Switch>
         </div>
       </Router>

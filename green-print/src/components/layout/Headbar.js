@@ -27,7 +27,7 @@ const Headbar = () => {
   return (
     <StyledDiv>
       <Link to="/" className="logo">
-        Green Way!
+        Green-Print
       </Link>
     </StyledDiv>
   );

@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
 const Form = styled.form`
   display: flex;
 `;
-class Home extends React.Component {
+class MetroHome extends React.Component {
   state = {
     start: "",
     end: ""
@@ -67,4 +67,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default MetroHome;
