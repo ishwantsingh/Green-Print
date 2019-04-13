@@ -5,15 +5,22 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
   .container {
     height: 85vh;
     width: 40vw;
     margin: 0 2%;
-    .heading {
-      font-size: 1.7rem;
-      font-weight: bold;
-      text-align: center;
-    }
+  }
+  .heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  span {
+    font-size: 1rem;
   }
 `;
 
@@ -67,11 +74,31 @@ class RoadHome extends React.Component {
   }
 
   render() {
+    if (this.state.start && this.state.end) {
+      return (
+        <StyledContainer>
+          <div className="container" id="mb" />
+          <div className="info">
+            <div className="heading">
+              Start Station:{" "}
+              <span>
+                {this.state.start.substring(0, this.state.start.indexOf(","))}
+              </span>
+            </div>
+            <div className="heading">
+              End Station:{" "}
+              <span>
+                {this.state.end.substring(0, this.state.end.indexOf(","))}
+              </span>
+            </div>
+          </div>
+        </StyledContainer>
+      );
+    }
     return (
       <StyledContainer>
-        <div className="container" id="mb">
-          <div className="tesst" />
-        </div>
+        <div className="container" id="mb" />
+        <h1>Select Starting and Ending Point</h1>
       </StyledContainer>
     );
   }

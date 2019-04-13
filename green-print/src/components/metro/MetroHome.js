@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Financial from "./information/Financial";
 import Environmental from "./information/Environmental";
-import Switchbar from "../layout/Switchbar";
+// import Switchbar from "../layout/Switchbar";
 import Dropdown from "./Dropdown";
 
 import getInfo from "../../state/actionCreators";
