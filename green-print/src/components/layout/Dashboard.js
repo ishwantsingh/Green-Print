@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -18,6 +19,15 @@ const StyledContainer = styled.div`
       font-weight: bold;
       margin: 20px auto;
       text-align: center;
+    }
+    .button {
+      text-decoration: none;
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border: 2px solid #009688;
+      border-radius: 3px;
+      color: #009688;
     }
   }
 `;
@@ -156,7 +166,12 @@ class Dashboard extends React.Component {
             </div>
           </div>
 
-          <div className="transport-method">You are travelling via: </div>
+          <div className="transport-method ">
+            <Link className="button" to="/apphome">
+              {" "}
+              Know your Carbon footprint
+            </Link>
+          </div>
         </div>
       </StyledContainer>
     );

@@ -11,16 +11,18 @@ import Dasboard from "./components/layout/Dashboard";
 
 import MetroHome from "./components/metro/MetroHome";
 import About from "./components/layout/About";
+import AppHome from "./components/layout/AppHome";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Headbar />
-        <Switch>
+        <nav>
           <Route exact path="/" component={Dasboard} />
           <Route path="/about" component={About} />
-        </Switch>
+          <Route path="/apphome" component={AppHome} />
+        </nav>
       </Router>
     );
   }

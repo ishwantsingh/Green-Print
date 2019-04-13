@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   align-items: center;
   margin-bottom: 15px;
   height: 53px;
-  background-color: rgb(124, 252, 0);
+  background-color: #009688;
   a {
     margin-right: 3%;
     margin-left: 5.8%;
