@@ -39,7 +39,7 @@ class RoadHome extends React.Component {
       [e.target.id]: e.target.value
     });
 
-    // console.log(this.state);
+    console.log(this.state);
   };
 
   componentDidMount() {
@@ -74,20 +74,23 @@ class RoadHome extends React.Component {
     endInput.addEventListener("change", e => {
       this.handleChange(e);
     });
-  }
-
-  render() {
+    // SOMETHING ELSE
+    var that = this; //SO THAT I CAN ACCESS THIS>SETSTATE IN FUNCTION
     var checkExist = setInterval(function() {
       if (document.querySelector(".mapbox-directions-route-summary") != null) {
         const distance = document.querySelector(
           ".mapbox-directions-route-summary"
-        ).childNodes[1];
+        ).childNodes[1].innerHTML;
         const time = document.querySelector(".mapbox-directions-route-summary")
-          .childNodes[3];
-        console.log(distance, time);
+          .childNodes[3].innerHTML;
+
         clearInterval(checkExist);
+        that.setState({ distance: distance, time: time });
       }
     }, 200);
+  }
+
+  render() {
     if (this.state.start && this.state.end) {
       return (
         <StyledContainer>
