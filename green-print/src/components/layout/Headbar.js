@@ -21,9 +21,14 @@ const StyledDiv = styled.div`
     font-weight: bold;
     margin-bottom: 5px;
   }
+  .links {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
   div {
     display: flex;
-    width: 15%;
+    width: 20%;
   }
 `;
 
@@ -34,9 +39,18 @@ const Headbar = () => {
         Green-Print
       </Link>
       <div>
-        <Link to="/about">About</Link>
-        <Link to="/">Log Out</Link>
-        <Link to="/">Log In</Link>
+        <Link to="/about" className="links">
+          About
+        </Link>
+        <Link to="/appHome" className="links">
+          Calculate
+        </Link>
+        <Link to="/" className="links">
+          Log Out
+        </Link>
+        <Link to="/" className="links">
+          Log In
+        </Link>
       </div>
     </StyledDiv>
   );
