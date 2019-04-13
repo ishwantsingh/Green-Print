@@ -6,8 +6,8 @@ const StyledContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   .container {
-    height: 100vh;
-    width: 100vw;
+    height: 85vh;
+    width: 40vw;
     margin: 0 2%;
     .heading {
       font-size: 1.7rem;
@@ -18,8 +18,18 @@ const StyledContainer = styled.div`
 `;
 
 class RoadHome extends React.Component {
+  state = {
+    start: "",
+    end: ""
+  };
   mapboxgl = window.mapboxgl;
   MapboxDirections = window.MapboxDirections;
+
+  changeHandler(e) {
+    e.target.name = e.target.value;
+    // console.log(e.target.value);
+    console.log(e.target.name);
+  }
   componentDidMount() {
     this.mapboxgl.accessToken =
       "pk.eyJ1IjoiaXNod2FudHNpbmdoIiwiYSI6ImNqdWUzZ2NjbjBndjA0ZW9od2t1aGpvNDIifQ.w1yxRYhbHY2Xw9aQ11R7zA";
@@ -37,7 +47,21 @@ class RoadHome extends React.Component {
       "top-left"
     );
     map.addControl(new this.mapboxgl.NavigationControl());
+    // apppp
+
+    const startInput = document.querySelector(".mapboxgl-ctrl-geocoder")
+      .childNodes[1];
+    startInput.addEventListener("change", e => {
+      this.changeHandler(e);
+    });
+
+    const endInput = document.querySelectorAll(".mapboxgl-ctrl-geocoder")[1]
+      .childNodes[1];
+    endInput.addEventListener("change", e => {
+      this.changeHandler(e);
+    });
   }
+
   render() {
     return (
       <StyledContainer>
