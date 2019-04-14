@@ -9,21 +9,41 @@ const StyledContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   .info {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
   }
+
   .container {
     height: 90vh;
     width: 45vw;
     margin: 0 2%;
   }
   .heading {
+    font-size: 1.6rem;
+    margin-top: -185px;
+    span {
+      font-weight: bold;
+    }
+  }
+  span {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  span {
-    font-size: 1rem;
+  .unselected {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .infoContainer {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -103,26 +123,28 @@ class RoadHome extends React.Component {
           <div className="container" id="mb" />
           <div className="info">
             <div className="heading">
-              Start Station:{" "}
+              Start Point:{" "}
               <span>
                 {this.state.start.substring(0, this.state.start.indexOf(","))}
-              </span>
-            </div>
-            <div className="heading">
-              End Station:{" "}
+              </span>{" "}
+              {`&`} End Point:{" "}
               <span>
                 {this.state.end.substring(0, this.state.end.indexOf(","))}
               </span>
             </div>
-            <div>
+            <br />
+            <br />
+            <br />
+            <div className="infoContainer">
               <FinancialRoad
                 start={this.state.start}
                 end={this.state.end}
                 distance={this.state.distance}
                 time={this.state.time}
               />
-            </div>
-            <div>
+              <br />
+              <br />
+
               <EnvironmentalRoad
                 start={this.state.start}
                 end={this.state.end}
@@ -137,7 +159,7 @@ class RoadHome extends React.Component {
     return (
       <StyledContainer>
         <div className="container" id="mb" />
-        <h1>Select Starting and Ending Point</h1>
+        <div className="unselected">Select Starting and Ending Point</div>
       </StyledContainer>
     );
   }

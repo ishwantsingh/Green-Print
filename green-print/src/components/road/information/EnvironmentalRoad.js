@@ -24,11 +24,12 @@ const Styledcontainer = styled.div`
     margin-right: 36%;
   }
   table {
-    width: 70%;
+    width: 100%;
     th {
       text-align: center;
     }
     td {
+      width: 50%;
       text-align: center;
     }
   }

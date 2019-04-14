@@ -24,11 +24,12 @@ const Styledcontainer = styled.div`
     margin-right: 36%;
   }
   table {
-    width: 70%;
+    width: 100%;
     th {
       text-align: center;
     }
     td {
+      width: 50%;
       text-align: center;
     }
   }
@@ -43,7 +44,7 @@ const FinancialRoad = props => {
       return Math.round(cost);
     } else {
       let cost = parseFloat(props.distance) * 1.6093 * 7.5;
-      console.log(cost);
+      // console.log(cost);
       return Math.round(65 + cost);
     }
   }
