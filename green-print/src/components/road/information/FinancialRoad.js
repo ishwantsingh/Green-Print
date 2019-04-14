@@ -51,10 +51,7 @@ const FinancialRoad = props => {
   if (props.distance && props.time) {
     return (
       <Styledcontainer className="card-action">
-        <div className="card-text">
-          Financial Information for route between <span>{props.start}</span> and{" "}
-          <span>{props.end}</span> :{" "}
-        </div>
+        <div className="card-text">Financial Information: </div>
         <table className="striped highlight">
           <thead>
             <tr>

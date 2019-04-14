@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import FinancialRoad from "./information/FinancialRoad";
+import EnvironmentalRoad from "./information/EnvironmentalRoad";
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -112,6 +113,14 @@ class RoadHome extends React.Component {
             </div>
             <div>
               <FinancialRoad
+                start={this.state.start}
+                end={this.state.end}
+                distance={this.state.distance}
+                time={this.state.time}
+              />
+            </div>
+            <div>
+              <EnvironmentalRoad
                 start={this.state.start}
                 end={this.state.end}
                 distance={this.state.distance}

@@ -54,10 +54,7 @@ const EnvironmentalRoad = props => {
   if (props.distance && props.time) {
     return (
       <Styledcontainer className="card-action">
-        <div className="card-text">
-          Environmental Information for route between <span>{props.start}</span>{" "}
-          and <span>{props.end}</span> :{" "}
-        </div>
+        <div className="card-text">Environmental Information:</div>
         <table className="striped highlight">
           <thead>
             <tr>
