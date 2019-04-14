@@ -13,7 +13,7 @@ import getInfo from "../../state/actionCreators";
 const StyledContainer = styled.div`
   width: 100%;
   display: flex;
-  .container {
+  .containerAll {
     margin: 0 2%;
     width: 100%;
     display: flex;
@@ -67,7 +67,7 @@ class MetroHome extends React.Component {
   render() {
     return (
       <StyledContainer>
-        <div className="container">
+        <div className="containerAll">
           <Form onSubmit={this.handleSubmit}>
             <div className="form-section">
               <div className="input-sect">

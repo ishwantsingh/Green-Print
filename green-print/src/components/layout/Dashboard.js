@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  .container {
+  .containerAll {
     margin: 0 2%;
     .heading {
       font-size: 1.7rem;
@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <StyledContainer>
-        <div className="container">
+        <div className="containerAll">
           <h1>Welcome to the app</h1>
           <div>
             <div className="heading">What is Carbon footprint?</div>

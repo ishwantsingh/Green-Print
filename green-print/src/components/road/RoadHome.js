@@ -14,8 +14,8 @@ const StyledContainer = styled.div`
     flex-direction: column;
   }
   .container {
-    height: 85vh;
-    width: 40vw;
+    height: 90vh;
+    width: 45vw;
     margin: 0 2%;
   }
   .heading {
@@ -67,6 +67,7 @@ class RoadHome extends React.Component {
     const startInput = document.querySelector(".mapboxgl-ctrl-geocoder")
       .childNodes[1];
     startInput.id = "start";
+    startInput.className = "browser-default";
     startInput.addEventListener("change", e => {
       this.handleChange(e);
     });
@@ -74,6 +75,8 @@ class RoadHome extends React.Component {
     const endInput = document.querySelectorAll(".mapboxgl-ctrl-geocoder")[1]
       .childNodes[1];
     endInput.id = "end";
+    endInput.className = "browser-default";
+
     endInput.addEventListener("change", e => {
       this.handleChange(e);
     });

@@ -5,7 +5,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  .container {
+  .containerAll {
     margin: 0 2%;
     .heading {
       font-size: 1.7rem;
@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
 export default function About() {
   return (
     <StyledContainer>
-      <div className="container">
+      <div className="containerAll">
         <div className="heading">Direct carbon emissions</div>
         <div>
           Direct carbon emissions come from sources that are directly from the

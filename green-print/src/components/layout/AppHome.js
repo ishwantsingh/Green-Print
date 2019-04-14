@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  .container {
+  .containerAll {
     margin: 0 2%;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ const StyledContainer = styled.div`
 export default function AppHome() {
   return (
     <StyledContainer>
-      <div className="container">
+      <div className="containerAll">
         <div className="heading">Travelling Via ?</div>
         <div className="links">
           <Link to="/road" className="button">
