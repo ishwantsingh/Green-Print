@@ -110,7 +110,6 @@ const Financial = props => {
   }
 };
 function mapStateToProps(state) {
-  console.log(state);
   return {
     distance: state.reducers.distance,
     start: state.reducers.start,

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -13,7 +14,8 @@ const StyledContainer = styled.div`
   }
 `;
 
-export default function About() {
+export default function About(props) {
+  if (!props.auth.uid) return <Redirect to="/login" />;
   return (
     <StyledContainer>
       <div className="containerAll">

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 
 import FinancialRoad from "./information/FinancialRoad";
 import EnvironmentalRoad from "./information/EnvironmentalRoad";
@@ -117,6 +118,9 @@ class RoadHome extends React.Component {
   }
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />;
+
     if (this.state.start && this.state.end) {
       return (
         <StyledContainer>
@@ -159,7 +163,7 @@ class RoadHome extends React.Component {
     return (
       <StyledContainer>
         <div className="container" id="mb" />
-        <div className="unselected">Select Starting and Ending Point</div>
+        <div className="unselected">Select Starting and Ending Location</div>
       </StyledContainer>
     );
   }

@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 import styled from "styled-components";
+
+import { logout } from "../../state/actions/authAction";
+import { login } from "../../state/actions/authAction";
+
+import SignedInHeadbarLinks from "./SignedInHeadbarLinks";
+import SignedOutLinks from "./SignedOutLinks";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -37,29 +43,37 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Headbar = () => {
+const Headbar = props => {
+  const { auth } = props;
+  const links = auth.uid ? (
+    <SignedInHeadbarLinks auth={props.auth} />
+  ) : (
+    <SignedOutLinks />
+  );
   return (
     <StyledDiv>
       <Link to="/" className="logo">
         Green-Print
       </Link>
 
-      <div className="link-container">
-        <Link to="/" className="links">
-          Log In
-        </Link>
-        <Link to="/" className="links">
-          Log Out
-        </Link>
-        <Link to="/appHome" className="links">
-          Calculate
-        </Link>
-        <Link to="/about" className="links">
-          About
-        </Link>
-      </div>
+      <div className="link-container">{links}</div>
     </StyledDiv>
   );
 };
 
-export default Headbar;
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout()),
+    login: () => dispatch(login())
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Headbar);
