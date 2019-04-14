@@ -89,10 +89,10 @@ const Environmental = props => {
 
 function mapStateToProps(state) {
   return {
-    distance: state.distance,
-    start: state.start,
-    end: state.end,
-    difference: Math.abs(state.startIndex - state.endIndex)
+    distance: state.reducers.distance,
+    start: state.reducers.start,
+    end: state.reducers.end,
+    difference: Math.abs(state.reducers.startIndex - state.reducers.endIndex)
   };
 }
 

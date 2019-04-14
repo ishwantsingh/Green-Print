@@ -1,4 +1,4 @@
-import stations from "./dummyData";
+import stations from "../dummyData";
 
 const initialState = {
   stations: stations,
