@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// import { Route, Switch } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Financial from "./information/Financial";
 import Environmental from "./information/Environmental";
-// import Switchbar from "../layout/Switchbar";
 import Dropdown from "./Dropdown";
 
 import getInfo from "../../state/actions/actionCreators";
@@ -68,6 +67,9 @@ class MetroHome extends React.Component {
     this.endRef.current.value = "";
   };
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />;
+
     return (
       <StyledContainer>
         <div className="containerAll">

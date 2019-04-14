@@ -15,7 +15,7 @@ const StyledLoginBut = styled.button`
   width: 215px;
   margin-right: 30px;
   background-color: white;
-  color: rgb(80, 139, 207);
+  color: #009688;
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.9rem;

@@ -43,32 +43,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledLogoutBut = styled.button`
-  width: 8%;
-  background-color: white;
-  color: rgb(80, 139, 207);
-  border-radius: 3px;
-  font-weight: bold;
-  font-size: 0.9rem;
-`;
-const StyledLoginBut = styled.button`
-  width: 215px;
-  margin-right: 30px;
-  background-color: white;
-  color: rgb(80, 139, 207);
-  border-radius: 3px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 3px;
-  span {
-    width: 100%;
-    position: absolute;
-    left: 5%;
-    top: 0%;
-    padding-right: 0px;
-  }
-`;
-
 const Headbar = props => {
   const { auth } = props;
   const links = auth.uid ? (
@@ -82,27 +56,12 @@ const Headbar = props => {
         Green-Print
       </Link>
 
-      <div className="link-container">
-        {links}
-        {/* <StyledLoginBut onClick={props.login} className="waves-effect btn">
-          <span>Sign in with Google</span>
-        </StyledLoginBut>
-        <StyledLogoutBut onClick={props.logout} className="waves-effect btn">
-          LOG OUT
-        </StyledLogoutBut>
-        <Link to="/appHome" className="links">
-          Calculate
-        </Link>
-        <Link to="/about" className="links">
-          About
-        </Link> */}
-      </div>
+      <div className="link-container">{links}</div>
     </StyledDiv>
   );
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     auth: state.firebase.auth
   };
