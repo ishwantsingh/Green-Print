@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import FinancialRoad from "./information/FinancialRoad";
+
 const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -28,8 +30,8 @@ class RoadHome extends React.Component {
   state = {
     start: "",
     end: "",
-    distance: "",
-    time: ""
+    distance: null,
+    time: null
   };
   mapboxgl = window.mapboxgl;
   MapboxDirections = window.MapboxDirections;
@@ -39,7 +41,7 @@ class RoadHome extends React.Component {
       [e.target.id]: e.target.value
     });
 
-    console.log(this.state);
+    //   console.log(this.state);
   };
 
   componentDidMount() {
@@ -107,6 +109,14 @@ class RoadHome extends React.Component {
               <span>
                 {this.state.end.substring(0, this.state.end.indexOf(","))}
               </span>
+            </div>
+            <div>
+              <FinancialRoad
+                start={this.state.start}
+                end={this.state.end}
+                distance={this.state.distance}
+                time={this.state.time}
+              />
             </div>
           </div>
         </StyledContainer>
