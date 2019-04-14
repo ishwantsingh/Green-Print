@@ -8,7 +8,7 @@ import Environmental from "./information/Environmental";
 // import Switchbar from "../layout/Switchbar";
 import Dropdown from "./Dropdown";
 
-import getInfo from "../../state/actionCreators";
+import getInfo from "../../state/actions/actionCreators";
 
 const StyledContainer = styled.div`
   width: 100%;
