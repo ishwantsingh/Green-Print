@@ -6,6 +6,9 @@ import styled from "styled-components";
 import { logout } from "../../state/actions/authAction";
 import { login } from "../../state/actions/authAction";
 
+import SignedInHeadbarLinks from "./SignedInHeadbarLinks";
+import SignedOutLinks from "./SignedOutLinks";
+
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
@@ -67,6 +70,12 @@ const StyledLoginBut = styled.button`
 `;
 
 const Headbar = props => {
+  const { auth } = props;
+  const links = auth.uid ? (
+    <SignedInHeadbarLinks auth={props.auth} />
+  ) : (
+    <SignedOutLinks />
+  );
   return (
     <StyledDiv>
       <Link to="/" className="logo">
@@ -74,7 +83,8 @@ const Headbar = props => {
       </Link>
 
       <div className="link-container">
-        <StyledLoginBut onClick={props.login} className="waves-effect btn">
+        {links}
+        {/* <StyledLoginBut onClick={props.login} className="waves-effect btn">
           <span>Sign in with Google</span>
         </StyledLoginBut>
         <StyledLogoutBut onClick={props.logout} className="waves-effect btn">
@@ -85,10 +95,17 @@ const Headbar = props => {
         </Link>
         <Link to="/about" className="links">
           About
-        </Link>
+        </Link> */}
       </div>
     </StyledDiv>
   );
+};
+
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    auth: state.firebase.auth
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -98,6 +115,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Headbar);
