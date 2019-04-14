@@ -3,14 +3,11 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 const Styledcontainer = styled.div`
-  dispaly: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-bottom: 0px;
-  margin-right: 7%;
-  margin-left: 6.1%;
   div {
     font-size: 1.6rem;
     margin-bottom: 30px;
@@ -22,15 +19,15 @@ const Styledcontainer = styled.div`
   text-align: left;
   .no-data-div {
     text-align: center;
-    margin-right: 36%;
   }
   table {
-    width: 70%;
+    width: 100%;
     th {
       text-align: center;
     }
     td {
       text-align: center;
+      width: 50%;
     }
   }
 `;
@@ -55,11 +52,8 @@ const Environmental = props => {
   if (props.start && props.end) {
     return (
       <Styledcontainer className="card-action">
-        <div className="card-text">
-          Environmental Information for route between <span>{props.start}</span>{" "}
-          and <span>{props.end}</span> :{" "}
-        </div>
-        <table className="striped highlight">
+        <div className="card-text">Environmental Information:</div>
+        <table className="striped">
           <thead>
             <tr>
               <th>Transport</th>

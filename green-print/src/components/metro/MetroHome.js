@@ -20,6 +20,9 @@ const StyledContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    .infoComponent {
+      width: 68%;
+    }
   }
 `;
 
@@ -117,11 +120,13 @@ class MetroHome extends React.Component {
           </Form>
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <Financial />
-          <Environmental />
+          <div className="infoComponent">
+            {" "}
+            <Financial />
+            <br />
+            <br />
+            <Environmental />
+          </div>
         </div>
       </StyledContainer>
     );

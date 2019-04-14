@@ -8,9 +8,9 @@ const Styledcontainer = styled.div`
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-bottom: 0px;
-  margin-right: 7%;
-  margin-left: 6.1%;
+  .card-text {
+    text-align: center;
+  }
   div {
     font-size: 1.6rem;
     margin-bottom: 30px;
@@ -22,10 +22,9 @@ const Styledcontainer = styled.div`
   text-align: left;
   .no-data-div {
     text-align: center;
-    margin-right: 36%;
   }
   table {
-    width: 70%;
+    width: 100%;
     th {
       text-align: center;
     }
@@ -73,10 +72,11 @@ const Financial = props => {
     return (
       <Styledcontainer className="card-action">
         <div className="card-text">
-          Financial Information for route between <span>{props.start}</span> and{" "}
-          <span>{props.end}</span> :{" "}
+          Start Station: <span>{props.start}</span> {`&`} End Station:
+          <span>{props.end}</span>{" "}
         </div>
-        <table className="striped highlight">
+        <div> Financial Information:</div>
+        <table className=" striped">
           <thead>
             <tr>
               <th>Transport</th>
