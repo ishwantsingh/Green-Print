@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { logout } from "../../state/actions/authAction";
 
@@ -28,12 +28,12 @@ const StyledHeadDiv = styled.div`
   }
 `;
 
-// const StyledUserImg = styled.img`
-//   margin-top: 7px;
-//   border-radius: 50%;
-//   height: 45px;
-//   width: 45px;
-// `;
+const StyledUserImg = styled.img`
+  margin-top: 7px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+`;
 
 const StyledLogoutBut = styled.button`
   width: 25%;
@@ -55,13 +55,13 @@ const StyledBut = styled.button`
 function SignedInHeadbarLinks(props) {
   return (
     <StyledHeadDiv>
-      {/* <NavLink to="/user" className="link-user">
+      <NavLink to="/user" className="link-user">
         <StyledUserImg
           src={props.auth.photoURL}
           alt="profile pic"
           className="profile-img"
         />
-      </NavLink> */}
+      </NavLink>
       <div className="link-container">
         <StyledLogoutBut onClick={props.logout} className="waves-effect btn">
           Log Out
