@@ -29,6 +29,7 @@ function User(props) {
   return (
     <StyledDiv className="card-panel">
       <h5>
+        {console.log(props.auth)}
         Username: <span>{props.auth.displayName}</span>
       </h5>
       <div className="profile-pic-div">
