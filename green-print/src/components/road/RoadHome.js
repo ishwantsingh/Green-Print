@@ -53,7 +53,8 @@ class RoadHome extends React.Component {
     start: "",
     end: "",
     distance: null,
-    time: null
+    time: null,
+    myInterval: null
   };
   mapboxgl = window.mapboxgl;
   MapboxDirections = window.MapboxDirections;
@@ -63,7 +64,7 @@ class RoadHome extends React.Component {
       [e.target.id]: e.target.value
     });
 
-    //   console.log(this.state);
+    //console.log(this.state.distance);
   };
 
   componentDidMount() {
@@ -102,7 +103,7 @@ class RoadHome extends React.Component {
       this.handleChange(e);
     });
     // SOMETHING ELSE
-    var that = this; //SO THAT I CAN ACCESS THIS>SETSTATE IN FUNCTION
+    var that = this; //SO THAT I CAN ACCESS THIS.SETSTATE IN FUNCTION
     var checkExist = setInterval(function() {
       if (document.querySelector(".mapbox-directions-route-summary") != null) {
         const distance = document.querySelector(
@@ -115,6 +116,71 @@ class RoadHome extends React.Component {
         that.setState({ distance: distance, time: time });
       }
     }, 200);
+    // var checkChange = setInterval(function() {
+    //   if (
+    //     document.querySelector(".mapbox-directions-route-summary") &&
+    //     document.querySelector(".mapbox-directions-route-summary").childNodes[1]
+    //       .innerHTML != that.state.distance
+    //   ) {
+    //     const distance = document.querySelector(
+    //       ".mapbox-directions-route-summary"
+    //     ).childNodes[1].innerHTML;
+    //     const time = document.querySelector(".mapbox-directions-route-summary")
+    //       .childNodes[3].innerHTML;
+
+    //     that.setState({ distance: distance, time: time });
+    //   }
+    // }, 200);
+
+    // HHHHHHHHHHHHHHHHHHHHHHHHHH
+    this.checkChange();
+  }
+  getCheck() {
+    var that = this;
+    if (
+      document.querySelector(".mapbox-directions-route-summary") &&
+      document.querySelector(".mapbox-directions-route-summary").childNodes[1]
+        .innerHTML != this.state.distance
+    )
+      var check = setInterval(function() {
+        const distance = document.querySelector(
+          ".mapbox-directions-route-summary"
+        ).childNodes[1].innerHTML;
+        const time = document.querySelector(".mapbox-directions-route-summary")
+          .childNodes[3].innerHTML;
+        clearInterval(check);
+
+        return that.setState({ distance: distance, time: time });
+      }, 200);
+  }
+  checkChange = () => {
+    var that = this;
+    this.setState({
+      myInterval: setInterval(function() {
+        console.log("that");
+        that.getCheck();
+        // if (
+        //   document.querySelector(".mapbox-directions-route-summary") &&
+        //   document.querySelector(".mapbox-directions-route-summary")
+        //     .childNodes[1].innerHTML != this.state.distance
+        // ) {
+        //   var check = setInterval(function() {
+        //     const distance = document.querySelector(
+        //       ".mapbox-directions-route-summary"
+        //     ).childNodes[1].innerHTML;
+        //     const time = document.querySelector(
+        //       ".mapbox-directions-route-summary"
+        //     ).childNodes[3].innerHTML;
+        //     clearInterval(check);
+        //     this.setState({ distance: distance, time: time });
+        //   }, 200);
+        // }
+      }, 1000)
+    });
+  };
+
+  componentWillUnmount() {
+    clearInterval(this.state.myInterval);
   }
 
   render() {

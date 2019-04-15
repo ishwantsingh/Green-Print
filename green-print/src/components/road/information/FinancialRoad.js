@@ -39,16 +39,31 @@ const Styledcontainer = styled.div`
 
 const FinancialRoad = props => {
   function carFuel() {
-    if (props.distance === 0) {
+    if (parseFloat(props.distance) === 0) {
       let cost = 0;
       return Math.round(cost);
     } else {
       let cost = parseFloat(props.distance) * 1.6093 * 7.5;
-      // console.log(cost);
+      //console.log(props.distance);
       return Math.round(65 + cost);
     }
   }
-
+  function busCost() {
+    if (parseFloat(props.distance) === 0) {
+      var cost = 0;
+    } else if (0 <= parseFloat(props.distance) <= 1) {
+      var cost = 5;
+    } else if (1 < parseFloat(props.distance) <= 3) {
+      var cost = 10;
+    } else if (3 <= parseFloat(props.distance) <= 10) {
+      var cost = 15;
+    } else if (10 < parseFloat(props.distance) <= 20) {
+      var cost = 20;
+    } else if (20 < parseFloat(props.distance)) {
+      var cost = 30;
+    }
+    return Math.round(cost);
+  }
   if (props.distance && props.time) {
     return (
       <Styledcontainer className="card-action">
@@ -68,7 +83,7 @@ const FinancialRoad = props => {
             </tr>
             <tr>
               <td>Bus</td>
-              <td>{carFuel() / 2} Rs</td>
+              <td>{busCost()} Rs</td>
             </tr>
           </tbody>
         </table>
