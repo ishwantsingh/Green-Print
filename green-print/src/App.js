@@ -7,13 +7,12 @@ import "./App.css";
 
 import Headbar from "./components/layout/Headbar";
 import Dasboard from "./components/layout/Dashboard";
-import Financial from "./components/metro/information/Financial";
 import MetroHome from "./components/metro/MetroHome";
 import About from "./components/layout/About";
 import AppHome from "./components/layout/AppHome";
 import RoadHome from "./components/road/RoadHome";
-import Environmental from "./components/metro/information/Environmental";
 import { Login } from "./components/layout/Login";
+import User from "./components/user/User";
 
 class App extends Component {
   render() {
@@ -43,9 +42,11 @@ class App extends Component {
             path="/metro"
             render={props => <MetroHome {...props} auth={auth} />}
           />
+          <Route
+            path="/user"
+            render={props => <User {...props} auth={auth} />}
+          />
           <Switch>
-            <Route path="/financial" component={Financial} />
-            <Route path="/environmental" component={Environmental} />
             <Route
               path="/login"
               render={props => <Login {...props} auth={auth} />}

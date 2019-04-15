@@ -2,7 +2,7 @@ export const login = () => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
-
+    //  console.log("boo");
     firebase
       .auth()
       .getRedirectResult()
