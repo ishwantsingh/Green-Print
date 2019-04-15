@@ -50,6 +50,7 @@ const StyledBut = styled.button`
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.92rem;
+  padding: 0 1px;
 `;
 
 function SignedInHeadbarLinks(props) {

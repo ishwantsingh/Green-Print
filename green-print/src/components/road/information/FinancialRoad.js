@@ -40,29 +40,51 @@ const Styledcontainer = styled.div`
 const FinancialRoad = props => {
   function carFuel() {
     if (parseFloat(props.distance) === 0) {
-      let cost = 0;
-      return Math.round(cost);
+      var price = 0;
+      return Math.round(price);
     } else {
-      let cost = parseFloat(props.distance) * 1.6093 * 7.5;
+      price = parseFloat(props.distance) * 1.6093 * 7.5;
       //console.log(props.distance);
-      return Math.round(65 + cost);
+      return Math.round(65 + price);
     }
   }
   function busCost() {
     if (parseFloat(props.distance) === 0) {
-      var cost = 0;
-    } else if (0 <= parseFloat(props.distance) <= 1) {
-      var cost = 5;
-    } else if (1 < parseFloat(props.distance) <= 3) {
-      var cost = 10;
-    } else if (3 <= parseFloat(props.distance) <= 10) {
-      var cost = 15;
-    } else if (10 < parseFloat(props.distance) <= 20) {
-      var cost = 20;
-    } else if (20 < parseFloat(props.distance)) {
-      var cost = 30;
+      var cost = 0 + " Rs";
+    } else if (
+      0 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 1
+    ) {
+      cost = 5 + " Rs";
+    } else if (
+      1 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 3
+    ) {
+      cost = 10 + " Rs";
+    } else if (
+      3 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 10
+    ) {
+      cost = 15 + " Rs";
+    } else if (
+      10 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 20
+    ) {
+      cost = 20 + " Rs";
+    } else if (
+      20 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 30
+    ) {
+      cost = 30 + " Rs";
+    } else if (
+      30 < parseFloat(props.distance) &&
+      parseFloat(props.distance) < 70
+    ) {
+      cost = 65 + " Rs";
+    } else if (70 < parseFloat(props.distance)) {
+      cost = "No Bus Found";
     }
-    return Math.round(cost);
+    return cost;
   }
   if (props.distance && props.time) {
     return (
@@ -83,7 +105,7 @@ const FinancialRoad = props => {
             </tr>
             <tr>
               <td>Bus</td>
-              <td>{busCost()} Rs</td>
+              <td>{busCost()}</td>
             </tr>
           </tbody>
         </table>

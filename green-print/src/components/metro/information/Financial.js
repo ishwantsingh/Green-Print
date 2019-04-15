@@ -50,9 +50,9 @@ const Financial = props => {
     if (props.difference === 1) {
       var cost = 10;
     } else if (props.difference === 0) {
-      var cost = 0;
+      cost = 0;
     } else if (props.difference === 2 || props.difference === 3) {
-      var cost = 20;
+      cost = 20;
     } else if (
       props.difference === 4 ||
       props.difference === 5 ||
@@ -62,9 +62,9 @@ const Financial = props => {
       props.difference === 9 ||
       props.difference === 10
     ) {
-      var cost = 30;
+      cost = 30;
     } else if (props.difference >= 11) {
-      var cost = 40;
+      cost = 40;
     }
     return Math.round(cost);
   }

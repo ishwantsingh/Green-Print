@@ -116,21 +116,6 @@ class RoadHome extends React.Component {
         that.setState({ distance: distance, time: time });
       }
     }, 200);
-    // var checkChange = setInterval(function() {
-    //   if (
-    //     document.querySelector(".mapbox-directions-route-summary") &&
-    //     document.querySelector(".mapbox-directions-route-summary").childNodes[1]
-    //       .innerHTML != that.state.distance
-    //   ) {
-    //     const distance = document.querySelector(
-    //       ".mapbox-directions-route-summary"
-    //     ).childNodes[1].innerHTML;
-    //     const time = document.querySelector(".mapbox-directions-route-summary")
-    //       .childNodes[3].innerHTML;
-
-    //     that.setState({ distance: distance, time: time });
-    //   }
-    // }, 200);
 
     // HHHHHHHHHHHHHHHHHHHHHHHHHH
     this.checkChange();
@@ -159,22 +144,6 @@ class RoadHome extends React.Component {
       myInterval: setInterval(function() {
         console.log("that");
         that.getCheck();
-        // if (
-        //   document.querySelector(".mapbox-directions-route-summary") &&
-        //   document.querySelector(".mapbox-directions-route-summary")
-        //     .childNodes[1].innerHTML != this.state.distance
-        // ) {
-        //   var check = setInterval(function() {
-        //     const distance = document.querySelector(
-        //       ".mapbox-directions-route-summary"
-        //     ).childNodes[1].innerHTML;
-        //     const time = document.querySelector(
-        //       ".mapbox-directions-route-summary"
-        //     ).childNodes[3].innerHTML;
-        //     clearInterval(check);
-        //     this.setState({ distance: distance, time: time });
-        //   }, 200);
-        // }
       }, 1000)
     });
   };
