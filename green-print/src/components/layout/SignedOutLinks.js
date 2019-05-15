@@ -28,16 +28,7 @@ const StyledLoginBut = styled.button`
     padding-right: 0px;
   }
 `;
-// const StyledSvg = styled.img`
-//   position: absolute !important;
-//   left: -18%;
-//   top: -12%;
-//   margin-left: 40px;
-//   padding: 0px;
-//   text-align: left;
-//   height: 45px;
-//   width: 45px;
-// `;
+
 function SignedOutLinks(props) {
   return (
     <StyledOutNav>
