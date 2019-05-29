@@ -20,7 +20,7 @@ const StyledHeadDiv = styled.div`
   }
   .link-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 60%;
     flex-grow: 1;
     margin-right: 0;
