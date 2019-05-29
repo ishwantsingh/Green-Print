@@ -70,9 +70,9 @@ function SignedInHeadbarLinks(props) {
         <Link to="/appHome" className="links">
           <StyledBut className="waves-effect btn"> Calculate </StyledBut>
         </Link>
-        <Link to="/about" className="links">
+        {/* <Link to="/about" className="links">
           <StyledBut className="waves-effect btn"> About </StyledBut>
-        </Link>
+        </Link> */}
       </div>
     </StyledHeadDiv>
   );

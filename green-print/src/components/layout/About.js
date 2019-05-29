@@ -16,6 +16,8 @@ const StyledContainer = styled.div`
 
 export default function About(props) {
   if (!props.auth.uid) return <Redirect to="/login" />;
+  if (props.auth.uid) return <Redirect to="/" />;
+
   return (
     <StyledContainer>
       <div className="containerAll">
