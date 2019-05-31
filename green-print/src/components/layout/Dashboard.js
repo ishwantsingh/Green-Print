@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Link, Redirect } from "react-router-dom";
 
 import nature from "../../images/nature.svg";
+import nature2 from "../../images/nature2.svg";
+import bike from "../../images/road.svg";
+import map from "../../images/map.svg";
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -13,6 +16,23 @@ const StyledContainer = styled.div`
     text-align: center;
     .heading {
       font-size: 1.7rem;
+    }
+    .info-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: 2.8rem;
+      .sub-info {
+        width: 25%;
+        height: 25%;
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+    .links {
+      display: flex;
+      justify-content: center;
     }
     .sub-heading {
       font-size: 1.2rem;
@@ -36,8 +56,8 @@ const StyledContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 500px;
-  height: 500px;
+  width: 30%;
+  height: 30%;
 `;
 
 function Dashboard(props) {
@@ -46,17 +66,31 @@ function Dashboard(props) {
   return (
     <StyledContainer>
       <div className="containerAll">
-        <h1>Welcome to the app</h1>
-        <div>
-          <Image src={nature} alt="nature" />
+        <div className="info-div">
+          <div className="sub-info">
+            <div>Wanna know the best way to Travel?</div>
+            <p>
+              Select the mode of travel below to know the cleanest and the most
+              cost-efficient mode of travel
+            </p>
+          </div>
+          <Image src={nature2} alt="nature" />
         </div>
         <br />
         <br />
         <div className="transport-method ">
-          <Link className="button" to="/apphome">
+          <div className="links">
+            <Link to="/road" className="button">
+              Road
+            </Link>
+            <Link to="/metro" className="button">
+              Metro
+            </Link>
+          </div>
+          {/* <Link className="button" to="/apphome">
             {" "}
             Know your Carbon footprint
-          </Link>
+          </Link> */}
         </div>
       </div>
     </StyledContainer>
