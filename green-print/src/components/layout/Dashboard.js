@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link, Redirect } from "react-router-dom";
 
+import nature from "../../images/nature.svg";
+
 const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -33,6 +35,11 @@ const StyledContainer = styled.div`
   }
 `;
 
+const Image = styled.img`
+  width: 500px;
+  height: 500px;
+`;
+
 function Dashboard(props) {
   if (!props.auth.uid) return <Redirect to="/login" />;
 
@@ -40,6 +47,7 @@ function Dashboard(props) {
     <StyledContainer>
       <div className="containerAll">
         <h1>Welcome to the app</h1>
+        <Image src={nature} alt="nature" />
         <br />
         <br />
         <div className="transport-method ">
