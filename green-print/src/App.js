@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-// import { compose } from "redux";
-// import styled from "styled-components";
+
 import "./App.css";
 
 import Headbar from "./components/layout/Headbar";
 import Dasboard from "./components/layout/Dashboard";
 import MetroHome from "./components/metro/MetroHome";
-import About from "./components/layout/About";
 import AppHome from "./components/layout/AppHome";
 import RoadHome from "./components/road/RoadHome";
 import { Login } from "./components/layout/Login";
@@ -25,10 +23,6 @@ class App extends Component {
             exact
             path="/"
             render={props => <Dasboard {...props} auth={auth} />}
-          />
-          <Route
-            path="/about"
-            render={props => <About {...props} auth={auth} />}
           />
           <Route
             path="/apphome"

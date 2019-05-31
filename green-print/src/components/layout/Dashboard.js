@@ -47,7 +47,9 @@ function Dashboard(props) {
     <StyledContainer>
       <div className="containerAll">
         <h1>Welcome to the app</h1>
-        <Image src={nature} alt="nature" />
+        <div>
+          <Image src={nature} alt="nature" />
+        </div>
         <br />
         <br />
         <div className="transport-method ">
