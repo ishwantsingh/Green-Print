@@ -10,7 +10,7 @@ import map from "../../images/map.svg";
 const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
-  margin: 0 auto;
+  margin: 40px auto;
   .containerAll {
     margin: 0 2%;
     text-align: center;
